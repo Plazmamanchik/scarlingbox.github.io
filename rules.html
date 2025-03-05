@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Правила - ScarlingBox</title>
+  <link rel="icon" href="img/ico.ico">
+  <style>
+    /* Загальний стиль сторінки */
+    body {
+      background-image: url("img/background2.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      position: relative; /* Потрібно для коректного позиціонування псевдоелемента */
+      overflow: hidden; /* Забороняє прокручування */
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4); /* Чорний колір із прозорістю 50% */
+      z-index: -1; /* Розміщення позаду основного вмісту */
+    }
+
+    /* Заголовок */
+    h1 {
+      font-size: 3.5em;
+      text-align: center;
+      margin-top: 30px;
+      background: linear-gradient(to right, #F2FB15, #FDA118);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 40px;
+    }
+
+    /* Стилі для контейнера правил */
+    .rules-container {
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 15px;
+      padding: 30px;
+      width: 90%;
+      max-width: 900px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+      overflow-y: auto;
+      max-height: 70vh; /* Обмежує висоту контейнера, щоб можна було прокручувати */
+      margin-bottom: 40px;
+    }
+
+    .rules-container h2 {
+      font-size: 2em;
+      color: #333;
+      margin-bottom: 15px;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    /* Список правил */
+    ol {
+      font-size: 1.1em;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    li {
+      margin-bottom: 15px;
+    }
+
+    li:nth-child(odd) {
+      background-color: #f9f9f9;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    li:nth-child(even) {
+      background-color: #eaeaea;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    /* Стилі для кнопки повернення */
+    .back-btn {
+      background: linear-gradient(to right, #F2FB15, #FDA118);
+      border: none;
+      border-radius: 25px;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      cursor: pointer;
+      text-align: center;
+      margin-top: 30px;
+      transition: background 0.3s, transform 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: linear-gradient(to right, #FDA118, #F2FB15);
+      transform: scale(1.05);
+    }
+
+    /* Адаптивність */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.8em;
+      }
+
+      .back-btn {
+        font-size: 1em;
+        padding: 12px 24px;
+      }
+
+      .rules-container {
+        padding: 20px;
+        max-height: 60vh;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Правила сервера ScarlingBox</h1>
+
+  <!-- Правила в Minecraft -->
+  <div class="rules-container">
+    <h2>Правила в Minecraft</h2>
+    <ol>
+      <li>1.1 Убийство игрока одетого в сете от курицы до кота на начальной арене в сете выше волка (если вы сами полезли, то игроку наказания не будет). Бан на 2 часа.</li>
+      <li>2.0 Использование читов - бан на 21 день по айпи.</li>
+      <li>2.1 Признание в читах - бан на 14 дней.</li>
+      <li>2.2 Хранение читов - бан на 14 дней. (Если читы были удалены более 21 дня назад, бана нет.)</li>
+      <li>2.3 Отказ от проверки - бан на 21 день по айпи.</li>
+      <li>2.4 Лив с проверки - бан на 21 день.</li>
+      <li>2.5 Обход бана - бан по айпи на время бана, который вы получали!</li>
+      <li>2.6 Рекламирование читов - мут на 5 часов.</li>
+      <li>2.7 Тим с читом - бан на 7 дней.</li>
+      <li>2.8 Тимерство (больше 4 человек в команде) - бан на 3 дня каждому из участников тимы.</li>
+      <li>2.9 Использование багов сервера и скрытие их от администрации - бан на 3 дня.</li>
+      <li>3.0 Использование запрещенных модов - бан на 3 дня. Запрещенные моды: Xrey, FreeCam, item scroller, mouse tweaks.</li>
+      <li>3.1 Спам (более 4 одинаковых или почти одинаковых сообщений) - мут на 30 минут.</li>
+      <li>3.2 Попрошайничество (3 раза и более) - мут на 15 минут.</li>
+      <li>3.3 Оскорбление родителей - мут на 2 часа.</li>
+      <li>3.4 Оскорбление игрока 3 раза и больше - мут на 1 час.</li>
+      <li>3.5 Оскорбление администрации - мут на 2 часа.</li>
+      <li>3.6 Оскорбление сервера - мут на 2 часа.</li>
+      <li>3.7 Угроза баном, мутом - мут на 2 часа.</li>
+      <li>3.8 Рекламирование других серверов - мут на 5 часов.</li>
+      <li>4.1 Дудос сервера, лаг машина - бан по айпи на всегда.</li>
+    </ol>
+  </div>
+  
+  <div class="rules-container">
+    <h2>Правила в Discord</h2>
+    <ol>
+      <li>1.1 Не знание правил не оправдание!</li>
+      <li>2.1 Спам (4+ сообщения) - мут на 1 час.</li>
+      <li>2.2 Три раза в день написали в канал, не принадлежащий для этого - мут на 1 час.</li>
+      <li>3.1 Оскорбление родни - мут на 1 час.</li>
+      <li>3.2 Оскорбление администрации - мут на 1 час.</li>
+      <li>3.3 Оскорбление игроков - мут на 1 час.</li>
+      <li>3.4 Очень много матов - мут на 1 час.</li>
+      <li>Шуточные оскорбления не в счёт!</li>
+      <li>3.5 Подстрекание к оскорблению игроков/администрации/сервера - мут на 1 день.</li>
+      <li>4.1 Оскорбление сервера (касается Minecraft и Discord) - мут на 1 день.</li>
+      <li>4.2 Чрезмерное использование картинок, гифок, видосов - мут на 10 минут.</li>
+      <li>4.3 Реклама читов - мут на 1 день.</li>
+      <li>4.4 Реклама серверов (айпи) - мут на 1 день.</li>
+    </ol>
+  </div>
+  
+
+  <button class="back-btn" onclick="window.location.href='index.html'"> Назад на главную</button>
+<br>
+<br>
+</body>
+</html>

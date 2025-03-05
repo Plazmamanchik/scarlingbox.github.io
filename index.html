@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScarlingBox</title>
+  <link rel="icon" href="img/ico.ico">
+  <style>
+     /* Загальний стиль сторінки */
+     body {
+      background-image: url("img/background2.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      position: relative; /* Потрібно для коректного позиціонування псевдоелемента */
+      overflow: hidden; /* Забороняє прокручування */
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4); /* Чорний колір із прозорістю 50% */
+      z-index: -1; /* Розміщення позаду основного вмісту */
+    }
+
+
+    /* Заголовок */
+    h1 {
+      font-size: 4em;
+      text-align: center;
+      background: linear-gradient(to right, #F2FB15, #FDA118);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: slideInRight 2s;
+      
+      margin: 50px 0 0; /* Додано верхній відступ */
+     /* text-shadow: 0 0 10px #ff8800, 0 0 20px #F2FB15;*/
+    }
+
+    @keyframes slideInRight {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    /* IP */
+    .ip-container {
+      display: flex;
+      justify-content: center;
+      margin: 20px;
+    }
+
+    .ip {
+      padding: 10px 20px;
+      background: linear-gradient(to right, #F2FB15, #FDA118);
+      border-radius: 10px;
+      font-size: 1.5em;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    /* Стиль для кнопок */
+    .buttons-container {
+      display: flex;
+      flex-direction: row; /* Горизонтальне розташування кнопок */
+      align-items: center; /* Центрування кнопок по вертикалі */
+      margin-top: 20px;
+    }
+
+    .btn {
+      background: linear-gradient(to right, #F2FB15, #FDA118);
+      border: none;
+      border-radius: 15px;
+      padding: 10px 15px;
+      font-size: 1em;
+      cursor: pointer;
+      text-align: center;
+      margin: 0 10px; /* Відступи між кнопками */
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .btn {
+      background: linear-gradient(to right, #FDA118, #F2FB15);
+      transform: scale(1.05);
+    }
+
+    /* Новини */
+    #news-ticker {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      text-align: center;
+      padding: 15px 10px;
+      font-weight: bold;
+      font-size: 1.2em;
+      letter-spacing: 1px;
+      z-index: 999;
+      border-bottom: 3px solid #FDA118;
+    }
+
+    #news-ticker span {
+      animation: glow-news-ticker 1.5s infinite ease-in-out;
+    }
+
+    @keyframes glow-news-ticker  {
+      0%, 100% {
+        text-shadow: 0 0 10px #FDA118, 0 0 20px #F2FB15;
+      }
+      50% {
+        text-shadow: 0 0 20px #F2FB15, 0 0 30px #FDA118;
+      }
+    }
+
+
+
+    /* Адаптивність */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 3em;
+      }
+
+      .ip {
+        font-size: 1em;
+      }
+
+      .btn{
+        font-size: 0.9em;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Новини -->
+  <div id="news-ticker"><span>Проверьте наш Discord сервер!</span></div>
+
+  <!-- Заголовок -->
+  <h1>Добропожаловать на ScarlingBox</h1>
+
+  <!-- IP -->
+  <div class="ip-container" onclick="copyToClipboard('176.9.21.120:25735')">
+    <div class="ip">IP: 176.9.21.120:25735</div>
+  </div>
+
+  <!-- Контейнер кнопок -->
+  <div class="buttons-container">
+    <button class="btn" onclick="window.open('https://www.tiktok.com/@omagad_lipton')">Тиктокер сервера</button>
+    <button class="btn" onclick="window.location.href='rules.html'">Правила</button>
+    <button class="btn" onclick="window.location.href='donate.html'">Донат</button>
+    <button class="btn" onclick="window.open('https://discord.gg/KbNtfFzhe9')">Перейти в Discord</button>
+  </div>
+
+  <!-- Слайдер -->
+<div class="slider-container">
+  <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+  <div class="slider">
+    <div class="slide"><img src="img/slides/1.png" alt="Слайд 1"></div>
+    <div class="slide"><img src="img/slides/2.png" alt="Слайд 2"></div>
+    <div class="slide"><img src="img/slides/3.png" alt="Слайд 3"></div>
+    <div class="slide"><img src="img/slides/4.png" alt="Слайд 4"></div>
+    <div class="slide"><img src="img/slides/5.png" alt="Слайд 5"></div>
+    <div class="slide"><img src="img/slides/6.png" alt="Слайд 6"></div>
+    <div class="slide"><img src="img/slides/7.png" alt="Слайд 7"></div>
+    <div class="slide"><img src="img/slides/8.png" alt="Слайд 8"></div>
+  </div>
+  <button class="next" onclick="changeSlide(1)">&#10095;</button>
+</div>
+
+
+  <style>
+    .slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+}
+
+.slider img {
+  width: 100%;
+  display: block;
+}
+
+/* Кнопки "Вперед" і "Назад" */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 24px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Адаптивність для мобільних */
+@media (max-width: 768px) {
+  .prev, .next {
+    padding: 10px;
+    font-size: 18px;
+  }
+}
+
+  </style>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+  
+  function changeSlide(direction) {
+    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+    updateSlidePosition();
+  }
+  
+  function updateSlidePosition() {
+    document.querySelector('.slider').style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+  
+  let slideInterval = setInterval(() => changeSlide(1), 3000);
+  
+  function resetInterval() {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(() => changeSlide(1), 3000);
+  }
+  
+  document.querySelector('.prev').addEventListener('click', () => {
+    changeSlide(-1);
+    resetInterval();
+  });
+  
+  document.querySelector('.next').addEventListener('click', () => {
+    changeSlide(1);
+    resetInterval();
+  });
+  
+  let startX = 0;
+  document.querySelector('.slider-container').addEventListener('touchstart', (event) => {
+    startX = event.touches[0].clientX;
+  });
+  
+  document.querySelector('.slider-container').addEventListener('touchend', (event) => {
+    let endX = event.changedTouches[0].clientX;
+    if (startX - endX > 50) {
+      changeSlide(1);
+      resetInterval();
+    } else if (startX - endX < -50) {
+      changeSlide(-1);
+      resetInterval();
+    }
+  });
+  
+  function copyToClipboard(text) {
+    const input = document.createElement('input');
+    input.setAttribute('value', text);
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand('copy');
+    document.body.removeChild(input);
+    
+    const ipElement = document.querySelector('.ip');
+    ipElement.textContent = "Скопировано!!";
+    
+    setTimeout(() => {
+      ipElement.textContent = "IP: " + text;
+    }, 1500);
+  }
+  
+  const news = [
+    "Вайп 01.03.2025",
+    "Проверьте наш Discord сервер!"
+  ];
+  
+  let index = 0;
+  setInterval(() => {
+    document.getElementById('news-ticker').innerHTML = `<span>${news[index]}</span>`;
+    index = (index + 1) % news.length;
+  }, 3000);
+</script>
+
+</body>
+</html>
